@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 18 21:32:37 2020
+You can extract images from the video.
+You only need to set the path of video.
 
-@author: user
+@author: 김진용
 """
 
 import numpy as np
@@ -10,7 +11,7 @@ import cv2
 import random
 import csv
 
-input = 'C:/Users/charl/Desktop/test/3.mp4' # 동영상 경로 
+input = 'C:/Users/charl/green/green_normal.mp4' # 동영상 경로 
 
 cap = cv2.VideoCapture(input)
 
@@ -45,5 +46,5 @@ while (cap.isOpened() & (curr_frame < frame_total)):
         
         curr_frame = curr_frame + 1
         
-        cv2.imwrite(f'C:/Users/charl/Desktop/test/data3/{frame_idx}.jpg', frameClone) # 이미지 저장할 폴더 경로
+        cv2.imwrite(f'C:/Users/charl/green/green_normal/{frame_idx}.jpg', frameClone) # 이미지 저장할 폴더 경로
         frame_idx=frame_idx+1
