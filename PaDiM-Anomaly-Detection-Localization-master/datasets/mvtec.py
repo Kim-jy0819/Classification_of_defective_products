@@ -27,7 +27,7 @@ class MVTecDataset(Dataset):
         self.mvtec_folder_path = os.path.join(self.dataset_path, 'mvtec_anomaly_detection')
 
         # download dataset if not exist
-        # self.download()
+        self.download()
 
         # load dataset
         self.x, self.y, self.mask = self.load_dataset_folder()
