@@ -24,7 +24,7 @@ class MVTecDataset(Dataset):
         self.is_train = is_train
         self.resize = resize
         self.cropsize = cropsize
-        self.mvtec_folder_path = os.path.join(self.dataset_path)
+        self.mvtec_folder_path = os.path.join(self.dataset_path,'mvtec_anomaly_detection')
 
         # download dataset if not exist
         self.download()
@@ -103,7 +103,7 @@ class MVTecDataset(Dataset):
                 download_url(URL, tar_file_path)
             print('unzip downloaded dataset: %s' % tar_file_path)
             tar = tarfile.open(tar_file_path, 'r:xz')
-            tar.extractall(self.mvtec_folder_path)
+            tar.extractall(self.dataset_path)
             tar.close()
 
         return
