@@ -16,7 +16,7 @@ CLASS_NAMES = ['bottle', 'cable', 'capsule', 'carpet', 'grid',
 
 
 class MVTecDataset(Dataset):
-    def __init__(self, dataset_path='dataset/mvtec_anomaly_detection', class_name='bottle', is_train=True,
+    def __init__(self, dataset_path='./dataset/', class_name='bottle', is_train=True,
                  resize=256, cropsize=224):
         assert class_name in CLASS_NAMES, 'class_name: {}, should be in {}'.format(class_name, CLASS_NAMES)
         self.dataset_path = dataset_path
@@ -96,7 +96,7 @@ class MVTecDataset(Dataset):
 
     def download(self):
         """Download dataset if not exist"""
-
+        print(os.getcwd())
         if not os.path.exists(self.mvtec_folder_path):
             tar_file_path = self.mvtec_folder_path + '.tar.xz'
             if not os.path.exists(tar_file_path):
