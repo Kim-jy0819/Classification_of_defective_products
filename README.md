@@ -15,4 +15,6 @@ python detect.py --source 0
 ```
 
 # Demo Video
-<img src="https://user-images.githubusercontent.com/63527907/145675982-89983c45-0137-4859-bfae-6203899a1cd2.png" width="60%" height="60%">
+
+https://user-images.githubusercontent.com/63527907/145676579-6bbf8ea2-0a54-4f9d-905f-cfd64cdacecb.mp4
+
