@@ -36,7 +36,7 @@ from utils.torch_utils import select_device, time_sync
 
 import serial
 
-# ard= serial.Serial('COM4',57600) #9600
+ard= serial.Serial('COM4',9600) #9600
 
 @torch.no_grad()
 def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
@@ -151,36 +151,36 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                     n = (det[:, -1] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
-                    # if names[int(c)] =='Chopstick':
-                    #     # while 1:
-                    #         # time.sleep(1)
-                    #         c=''
-                    #         c='A'
-                    #         if c=='q':
-                    #             break
-                    #         else:
-                    #             c=c.encode('utf-8')
-                    #             ard.write(c)
-                    # elif names[int(c)] =='plate':
-                    #     # while 1:
-                    #         # time.sleep(1)
-                    #         c=''
-                    #         c='B'
-                    #         if c=='q':
-                    #             break
-                    #         else:
-                    #             c=c.encode('utf-8')
-                    #             ard.write(c)
-                    # elif names[int(c)] =='spoon':
-                    #     # while 1:
-                    #         # time.sleep(1)
-                    #         c=''
-                    #         c='C'
-                    #         if c=='q':
-                    #             break
-                    #         else:
-                    #             c=c.encode('utf-8')
-                    #             ard.write(c)
+                    if names[int(c)] =='Chopstick':
+                        # while 1:
+                            # time.sleep(1)
+                            c=''
+                            c='1'
+                            if c=='q':
+                                break
+                            else:
+                                c=c.encode('utf-8')
+                                ard.write(c)
+                    elif names[int(c)] =='plate':
+                        # while 1:
+                            # time.sleep(1)
+                            c=''
+                            c='2'
+                            if c=='q':
+                                break
+                            else:
+                                c=c.encode('utf-8')
+                                ard.write(c)
+                    elif names[int(c)] =='spoon':
+                        # while 1:
+                            # time.sleep(1)
+                            c=''
+                            c='3'
+                            if c=='q':
+                                break
+                            else:
+                                c=c.encode('utf-8')
+                                ard.write(c)
                     
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
